@@ -40,6 +40,7 @@ $ \frac{TP}{\sqrt{(TP + FN)(TP + FP)}} $
   - 0.7 - 0.8 is acceptable
   - 0.8 - 0.9 is excellent
   - 0.9+ is outstanding [3]
+
 Similarly to the FM measure, we expect the AUC-ROC to be higher for the synthetic dataset. 
   
   When using the AUC-ROC for multi-class models with N number of classes, we will plot N number of AUC-ROC curves. For example, if there are three dog breeds (A, B, and C), then we will have 1 ROC for A classified against B and C, 1 ROC for B against A and C, and 1 ROC for C against A and B.
