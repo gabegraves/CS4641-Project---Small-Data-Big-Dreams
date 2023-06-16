@@ -48,6 +48,16 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 ## Timeline:
 ![Timeline](https://github.gatech.edu/rnandakumar7/CS4641.github.io/blob/main/Timeline.png)
 
+##Contribution Table
+| Name         | Contribution                  |
+|--------------|-------------------------------|
+| Gabe Graves  | Introduction and Background, Novel Methods |
+| Lucy Xing    | Problem Statement             |
+| Hyuk Huang   | Results and Discussion        |
+| Hannah Lee   | Methods                       |
+| Rohan        | Timeline, Github Page         |
+
+
 
 ## References:
 [1] A. Kolesnikov et al., “Big transfer (BIT): General Visual Representation Learning,” Computer Vision – ECCV 2020, pp. 491–507, 2020. doi:10.1007/978-3-030-58558-7_29  
