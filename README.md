@@ -1,4 +1,4 @@
-# CS4641.github.io
+# Small Data Big Dreams
 ## Intro/Background - Gabriel
 
 Data augmentation and transfer learning are vital for leveraging machine learning on small datasets. These techniques mitigate overfitting and improve model generalizability by artificially expanding the dataset and leveraging pre-existing knowledge, respectively. 
