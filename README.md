@@ -32,6 +32,22 @@ We'll use several metrics to gauge the success of our data augmentation techniqu
   After the use of data augmentation, we will utilize two main scoring metrics to determine the effectiveness of the synthetic data. First, the Fowlkess-Mallows Measure utilizes the following equation:
 $ \frac{TP}{\sqrt{(TP + FN)(TP + FP)}} $
 
+  We expect a score between 0 and 1 as well as the FM measure being higher for the data augmented set. 
+  The second method that we will use is the “Area Under Curve” of the “Receiver Operating Characteristic” or AUC-ROC. This plots True Positive Rate (TPR) vs False Positive Rate (FPR) where:
+
+
+  In the AUC-ROC curve, a higher value of X signifies more False positives than True negatives and a higher Y means more True positives than False negatives. The values of the AUC range from 0 to 1, where:
+  - 0.7 - 0.8 is acceptable
+  - 0.8 - 0.9 is excellent
+  - 0.9+ is outstanding
+Similarly to the FM measure, we expect the AUC-ROC to be higher for the synthetic dataset. 
+  
+  When using the AUC-ROC for multi-class models with N number of classes, we will plot N number of AUC-ROC curves. For example, if there are three dog breeds (A, B, and C), then we will have 1 ROC for A classified against B and C, 1 ROC for B against A and C, and 1 ROC for C against A and B.
+  
+## Timeline:
+![Timeline](https://github.gatech.edu/rnandakumar7/CS4641.github.io/blob/main/Timeline.png)
+
+
 ## References:
 [1] A. Kolesnikov et al., “Big transfer (BIT): General Visual Representation Learning,” Computer Vision – ECCV 2020, pp. 491–507, 2020. doi:10.1007/978-3-030-58558-7_29  
 [2] A. Kotelnikov, D. Baranchuk, I. Rubachev, and A. Babenko, TabDDPM: Modelling Tabular Data with Diffusion Models. doi: https://doi.org/10.48550/arXiv.2209.15421 Focus to learn more  
