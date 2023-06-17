@@ -52,6 +52,7 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 ![Timeline](https://github.gatech.edu/rnandakumar7/CS4641.github.io/blob/main/Timeline.png)
 
 ## Contribution Table:
+
 | Name            | Contribution                              |
 |-----------------|-------------------------------------------|
 | Gabe Graves     | Introduction and Background, Novel Methods |
