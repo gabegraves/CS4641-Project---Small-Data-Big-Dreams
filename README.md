@@ -30,12 +30,12 @@ We’ll further explore how we can fine-tune existing large models for small dat
 
 We'll use several metrics to gauge the success of our data augmentation techniques. The Fowlkes-Mallows index gauges the similarity between synthetic and original data, with a higher score signaling better augmentation. The AUC-ROC, an evaluation measure for classification problems, plots the True Positive Rate against the False Positive Rate. We anticipate improved scores with synthetic data. For multi-class models, multiple AUC-ROC curves will be generated. In tabular regression tasks, we'll use RMSE and MAE, metrics that quantify prediction deviations from actual values, thus offering a holistic view of our prediction accuracy. We aim for these scores to also improve with the use of synthetic data [3, 4].
   After the use of data augmentation, we will utilize two main scoring metrics to determine the effectiveness of the synthetic data. First, the Fowlkess-Mallows Measure utilizes the following equation:
-![TP FN](https://github.gatech.edu/rnandakumar7/CS4641.github.io/blob/main/eq1.png)
+![TP FN](/eq1.png)
 
   We expect a score between 0 and 1 as well as the FM measure being higher for the data augmented set. 
   The second method that we will use is the “Area Under Curve” of the “Receiver Operating Characteristic” or AUC-ROC. This plots True Positive Rate (TPR) vs False Positive Rate (FPR) where:
 
-![TPR FPR](https://github.gatech.edu/rnandakumar7/CS4641.github.io/blob/main/eq2.png)
+![TPR FPR](/eq2.png)
 
   In the AUC-ROC curve, a higher value of X signifies more False positives than True negatives and a higher Y means more True positives than False negatives. The values of the AUC range from 0 to 1, where:
   - 0.7 - 0.8 is acceptable
