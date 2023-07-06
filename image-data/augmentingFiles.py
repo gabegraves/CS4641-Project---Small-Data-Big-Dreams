@@ -56,6 +56,7 @@ def random_Crop(randInd):
     )
     randCrop=[randCrop_data[i] for i in randInd]
     visualize_dataset(randCrop)
+    return randCrop
 
 def rotated_90(randInd):
     rotate_data90 = datasets.CIFAR10(
@@ -66,6 +67,7 @@ def rotated_90(randInd):
     )
     rot90=[rotate_data90[i] for i in randInd]
     visualize_dataset(rot90) 
+    return rot90
 
 def rotated_180(randInd):
     rotate_data180 = datasets.CIFAR10(
@@ -76,6 +78,7 @@ def rotated_180(randInd):
     )
     rot180=[rotate_data180[i] for i in randInd]
     visualize_dataset(rot180)
+    return rot180
     
 def rotated_270(randInd):
     rotate_data270 = datasets.CIFAR10(
@@ -86,6 +89,7 @@ def rotated_270(randInd):
     )
     rot270=[rotate_data270[i] for i in randInd]
     visualize_dataset(rot270)
+    return rot270
 
 def grayscaled(randInd):
     gray = datasets.CIFAR10(
@@ -96,6 +100,7 @@ def grayscaled(randInd):
     )
     grays=[gray[i] for i in randInd]
     visualize_dataset(grays)
+    return grays
 
 def weak_Perspective(randInd):
     perspective = datasets.CIFAR10(
@@ -106,6 +111,7 @@ def weak_Perspective(randInd):
     )
     per=[perspective[i] for i in randInd]
     visualize_dataset(per) 
+    return per
 
 def strong_Perspective(randInd):
     perspective2 = datasets.CIFAR10(
@@ -116,6 +122,7 @@ def strong_Perspective(randInd):
     )
     per2=[perspective2[i] for i in randInd]
     visualize_dataset(per2)
+    return per2
 
 def combined_Augmented_Data(randInd):
     rand_imgs=[train_data[i] for i in rand_indices]
