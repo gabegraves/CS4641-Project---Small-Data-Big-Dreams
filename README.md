@@ -52,20 +52,19 @@ The RMSE (Root Mean Square Error) is calculated using the following formula:
 
 RMSE = sqrt((1/n) * Σ(yi - y_hat_i)^2)
 
-
-> n is the total number of observations.
-> yi is the actual value for the i-th observation.
-> y_hat_i is the predicted value for the i-th observation.
+- n is the total number of observations.
+- yi is the actual value for the i-th observation.
+- y_hat_i is the predicted value for the i-th observation.
 
 The MAE (Mean Absolute Error) is calculated using the following formula:
 
 MAE = (1/n) * Σ|yi - y_hat_i|
 
-> n is the total number of observations.
-> yi is the actual value for the i-th observation.
-> y_hat_i is the predicted value for the i-th observation.
-> |yi - y_hat_i| is the absolute difference between the actual and predicted values for the i-th observation.
-> 
+- n is the total number of observations.
+- yi is the actual value for the i-th observation.
+- y_hat_i is the predicted value for the i-th observation.
+- |yi - y_hat_i| is the absolute difference between the actual and predicted values for the i-th observation.
+
 Both RMSE and MAE are measures of prediction error, with RMSE giving a relatively high weight to large errors.
 ## Results
 
