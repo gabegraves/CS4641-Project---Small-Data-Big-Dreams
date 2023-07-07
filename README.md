@@ -12,9 +12,45 @@ The motivation of this project is to experiment with various dataset sizes and m
 ## Methods
 
 We are going to explore different ways to deal with small datasets.
+### Data Cleaning
+#### Tabular Data
+Using the uber dataset, there are many different comparisons that can be leveraged for training a deep learning model. Cleaning the uber dataset involved parsing
+through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
+used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
+scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
+begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data.
+
+<img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
+
+#### Image Data
+For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of
+5,000.
 
 ### Data augmentation:
-Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.
+Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
+Control Image:
+- No augmentation was performed on these images<br>
+   <img src='Control.png' width='300'>
+
+
+Random Crop:
+- Zooms into and crops a random portion of the image <br>
+   <img src='Random Crop.png' width='300'>
+
+
+Grayscale:
+- Changes RGB values to shades of gray <br>
+   <img src='GrayScale.png' width='300'>
+
+
+Rotations (90, 180, and 270 degrees respectively): <br>
+- This helps the model recognize all sorts of rotated images <br>
+<img src='Rotate 90.png' width='300'> <img src='Rotate 180.png' width='300'> <img src='Rotate 270.png' width='300'>
+
+
+Perspective Changes (0.3 and 0.6 respectively): <br>
+- This is used to train the model for stretched and tilted images <br>
+<img src='Weak Perspective.png' width='300'> <img src='Stronger Perspective.png' width='300'>
 
 ### Generative models for data synthesis:
 Synthetic data as a supplement to real data is another way to deal with small datasets. Specifically, we will test the GAN and Diffusion models on their efficacy in generating synthetic data.
