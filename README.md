@@ -53,7 +53,7 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 ### Data Cleaning
 #### Tabular Data
 Using the uber dataset, there are many different comparisons that can be leveraged for training a deep learning model. Cleaning the uber dataset involved parsing
-through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
+through all the data available and removing illfitting data(null data, outliers, irrelevant data). There was some reducing of dimensinoality as the orignial datset included much more metrics like traffic and census zones, we decided to just use longitude and latitude metrics and cut out the rest. Additionally, only one days worth of data from the uber dataset was
 used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
 begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data.
