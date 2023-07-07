@@ -20,7 +20,7 @@ Control Image:
 <img src='Control.png' width='300'> <br>
 Random Crop:
 - Zooms into and crops a random portion of the image <br>
-<img src='Random Crop.png' width='300'>
+<img src='Random Crop.png' width='300'><br>
 Grayscale:
 - Changes RGB values to shades of gray <br>
 <img src='GrayScale.png' width='300'><br>
