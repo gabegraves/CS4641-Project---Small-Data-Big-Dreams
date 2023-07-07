@@ -22,15 +22,21 @@ Control Image:
 
 Random Crop:
 - Zooms into and crops a random portion of the image <br>
-<img src='Random Crop.png' width='300'><br>
+<img src='Random Crop.png' width='300'>
+
+
 Grayscale:
 - Changes RGB values to shades of gray <br>
-<img src='GrayScale.png' width='300'><br>
+<img src='GrayScale.png' width='300'>
+
+
 Rotations (90, 180, and 270 degrees respectively): <br>
 - This helps the model recognize all sorts of rotated images <br>
 <img src='Rotate 90.png' width='300'>
 <img src='Rotate 180.png' width='300'>
-<img src='Rotate 270.png' width='300'><br>
+<img src='Rotate 270.png' width='300'>
+
+
 Perspective Changes (0.3 and 0.6 respectively): <br>
 - This is used to train the model for stretched and tilted images <br>
 <img src='Weak Perspective.png' width='300'>
