@@ -21,9 +21,7 @@ scatter plots and a heat map to determine what sort of regression should be used
 begin to train our diffusion model using TabDDPM. Metrics will then be calculated using the Root Mean Squared Error model and the Mean Absolute Error metric. See below
 for the resulting scatter plots of the cleaned data.
 
-<img src='heatmapuber.PNG' width='200'>
-<img src='counthour.PNG' width='200'>
-<img src='countday.PNG' width='200'>
+<img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
 
 
 ### Data augmentation:
