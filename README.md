@@ -18,8 +18,7 @@ Using the uber dataset, there are many different comparisons that can be leverag
 through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
 used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
-begin to train our diffusion model using TabDDPM. Metrics will then be calculated using the Root Mean Squared Error model and the Mean Absolute Error metric. See below
-for the resulting scatter plots of the cleaned data.
+begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data.
 
 <img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
 
