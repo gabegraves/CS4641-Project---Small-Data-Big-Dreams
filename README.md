@@ -88,7 +88,7 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 
 ![RMSE](/RMSE.PNG)
 ![MAE](/MAE.PNG)
-![ValidationvSample](/ValidationvSample.png)
+![ValidationvSample](/ValidationvSample.PNG)
 
   
 ## Timeline:
