@@ -20,9 +20,9 @@ used, this will serve as our training data and the results from the model will b
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
 begin to train our diffusion model using TabDDPM. Metrics will then be calculated using the Root Mean Squared Error model and the Mean Absolute Error metric. See below
 for the resulting scatter plots of the cleaned data.
-<img src='heatmapuber.png' width='300'>
-<img src='counthour.png' width='300'>
-<img src='countday.png' width='300'>
+<img src='heatmapuber.PNG' width='300'>
+<img src='counthour.PNG' width='300'>
+<img src='countday.PNG' width='300'>
 
 
 ### Data augmentation:
