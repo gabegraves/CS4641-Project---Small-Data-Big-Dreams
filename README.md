@@ -15,10 +15,7 @@ We are going to explore different ways to deal with small datasets.
 
 ### Data augmentation:
 Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.
-<figure>
-  <img src="Control.png" width='300' alt="my alt text"/>
-  <figcaption>This is my caption text.</figcaption>
-</figure>
+<img src='Control.png' width='300'>
 <img src='Random Crop.png' width='300'>
 <img src='GrayScale.png' width='300'><br>
 <img src='Rotate 90.png' width='300'>
