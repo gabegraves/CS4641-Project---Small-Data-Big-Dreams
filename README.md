@@ -83,6 +83,13 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
   When using the AUC-ROC for multi-class models with N number of classes, we will plot N number of AUC-ROC curves. For example, if there are three dog breeds (A, B, and C), then we will have 1 ROC for A classified against B and C, 1 ROC for B against A and C, and 1 ROC for C against A and B.
 
 ![ROC](/eq3.png)
+
+## Results
+
+![RMSE](/RMSE.PNG)
+![MAE](/MAE.PNG)
+![ValidationvSample](/ValidationvSample.png)
+
   
 ## Timeline:
 ![Timeline](/Timeline.png)
