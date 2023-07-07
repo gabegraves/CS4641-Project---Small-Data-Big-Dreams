@@ -14,7 +14,7 @@ The motivation of this project is to experiment with various dataset sizes and m
 We are going to explore different ways to deal with small datasets.
 
 ### Data augmentation:
-Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.<br>
+Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.<br><br>
 Control Image:
 - No augmentation was performed on these images<br>
 <img src='Control.png' width='300'> <br>
