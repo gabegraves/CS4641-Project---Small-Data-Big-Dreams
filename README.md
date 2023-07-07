@@ -22,7 +22,7 @@ Synthetic data as a supplement to real data is another way to deal with small da
 GAN (Generative Adversarial Networks): GANs consist of two parts: a generator network, which produces synthetic data, and a discriminator network, which tries to distinguish between the real and synthetic data. The two networks are trained together, with the generator network trying to fool the discriminator network, and the discriminator network trying to accurately classify the data as real or synthetic. This adversarial process leads to the generator network producing increasingly realistic data. The reason we believe GANs would work well for data augmentation is due to their ability to learn and mimic the complex distributions of real-world data.
 The training process of a GAN can be represented by the following min-max equation:
 
-min_G max_D V(D, G) = E_{x~p_data(x)}[log D(x)] + E_{z~p_z(z)}[log(1 - D(G(z)))]
+\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
 
 In this equation:
 
@@ -42,7 +42,7 @@ Diffusion models: Diffusion models are a class of generative models that generat
 
 The reason we believe diffusion models would work well for tabular regression tasks is due to their ability to model the data distribution in a more granular and step-wise manner, which can capture the intricate structures in tabular data. The diffusion process can be represented by the following stochastic differential equation:
 
-dx = sqrt(2*Dt) * dW - Dt * grad_x(log p(x)) dt
+dx = \sqrt{2D} \, dt \, dW - D \, \nabla_x(\log p(x)) \, dt
 
 In this equation:
 
