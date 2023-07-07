@@ -22,6 +22,9 @@ begin to train our diffusion model using TabDDPM.The metrics are availible lower
 
 <img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
 
+#### Image Data
+For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of
+5,000.
 
 ### Data augmentation:
 Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
