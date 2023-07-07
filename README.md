@@ -26,7 +26,7 @@ We’ll further explore how we can fine-tune existing large models for small dat
 - Use LoRA to fine-tune the classification model.
 - Add layers on top of the pre-trained model and freeze other layers.
 - Use of Big Transfer model for image classification [1].
-## Potential Results/Discussion
+## Metrics:
 
 We'll use several metrics to gauge the success of our data augmentation techniques. The Fowlkes-Mallows index gauges the similarity between synthetic and original data, with a higher score signaling better augmentation. The AUC-ROC, an evaluation measure for classification problems, plots the True Positive Rate against the False Positive Rate. We anticipate improved scores with synthetic data. For multi-class models, multiple AUC-ROC curves will be generated. In tabular regression tasks, we'll use RMSE and MAE, metrics that quantify prediction deviations from actual values, thus offering a holistic view of our prediction accuracy. We aim for these scores to also improve with the use of synthetic data [3, 4].
   After the use of data augmentation, we will utilize two main scoring metrics to determine the effectiveness of the synthetic data. First, the Fowlkess-Mallows Measure utilizes the following equation:
@@ -48,12 +48,31 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 
 ![ROC](/eq3.png)
 
+The RMSE (Root Mean Square Error) is calculated using the following formula:
+
+RMSE = sqrt((1/n) * Σ(yi - y_hat_i)^2)
+
+
+> n is the total number of observations.
+> yi is the actual value for the i-th observation.
+> y_hat_i is the predicted value for the i-th observation.
+
+The MAE (Mean Absolute Error) is calculated using the following formula:
+
+MAE = (1/n) * Σ|yi - y_hat_i|
+
+> n is the total number of observations.
+> yi is the actual value for the i-th observation.
+> y_hat_i is the predicted value for the i-th observation.
+> |yi - y_hat_i| is the absolute difference between the actual and predicted values for the i-th observation.
+> 
+Both RMSE and MAE are measures of prediction error, with RMSE giving a relatively high weight to large errors.
 ## Results
 
 ### Data Cleaning
 #### Tabular Data
 Using the uber dataset, there are many different comparisons that can be leveraged for training a deep learning model. Cleaning the uber dataset involved parsing
-through all the data available and removing illfitting data(null data, outliers, irrelevant data). There was some reducing of dimensionality as the orignial datset included much more metrics like traffic and census zones, we decided to just use longitude and latitude metrics and cut out the rest. Additionally, only one days worth of data from the uber dataset was
+through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
 used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
 begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data.
