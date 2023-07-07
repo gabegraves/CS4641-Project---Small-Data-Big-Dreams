@@ -108,9 +108,22 @@ used, this will serve as our training data and the results from the model will b
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
 begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data. Note: as the data was collected from Uber, it was already cleaned. However, PCA and Lasso were also applied along with a heatmap. It should also be noted that the dataset may soon be changed for a larger dataset for better testing purposes.
 
+<img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
+
+Correlation Heat Map:
+
 ![image](https://github.gatech.edu/storage/user/35648/files/bcb34e0a-3913-4ae9-a744-7f14df33f7c6)
 
-<img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
+LASSO:
+![image](https://github.gatech.edu/storage/user/35648/files/101fa1bf-532b-4e08-ab12-63a30716bf82)
+
+PCA:
+
+![image](https://github.gatech.edu/storage/user/35648/files/0f89b75b-8caa-4907-b430-85f5cf7774d0)
+
+![image](https://github.gatech.edu/storage/user/35648/files/76f74c3f-2f25-42ad-91cc-eb791131291a)
+
+As can be seen from the feature selection, mean travel time is the most important feature as one would assume. As noted before, this data is not as large as we originally hoped and the relevant features for regression are not vast and so will be updated soon.
 
 #### Image Data
 For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of 5,000.
