@@ -139,10 +139,15 @@ Perspective Changes (0.3 and 0.6 respectively): <br>
 - This is used to train the model for stretched and tilted images <br>
 <img src='Weak Perspective.png' width='300'> <img src='Stronger Perspective.png' width='300'>
 
-### model
+### Model
+
+Image: 
 We use a Convolutional neural network model to perform image classification. For the model, we use 3 CNN layers with ReLU as an activation function and max-pooling after each layer. After the CNN layers, we use 2 fully connected layers to get the final classification result. For the loss function, we use cross-entropy loss.
 
 The benchmark is the complete dataset of CIFAR10 and the model shows good performance on it:![image](https://github.gatech.edu/storage/user/68901/files/464cfc0b-c7f5-4d49-9827-6f5fdbf882ae)
+
+Tabular:
+We used randomly generated tabular regression data from sklearn.datasets make_regression due to still working on feature selection and data cleaning for current tabular data as well as working on switching to a large, more standardized dataset that will lead to better comparisons. Consequently, the large RMSE and MAE are likely due to the random nature of the tabular dataset from sklearn but the important factors to note is the improvement in training loss and low validation with a decreasing overall slope showing little to no overfitting.
 
 ![RMSE](/RMSE.PNG)
 ![MAE](/MAE.PNG)
