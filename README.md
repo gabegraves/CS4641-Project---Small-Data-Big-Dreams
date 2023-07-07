@@ -12,6 +12,16 @@ The motivation of this project is to experiment with various dataset sizes and m
 ## Methods
 
 We are going to explore different ways to deal with small datasets.
+### Data Cleaning
+#### Tabular Data
+Using the uber dataset, there are many different comparisons that can be leveraged for training a deep learning model. Cleaning the uber dataset involved parsing
+through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
+used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
+scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
+begin to train our diffusion model using TabDDPM. Metrics will then be calculated using the Root Mean Squared Error model and the Mean Absolute Error metric. See below
+for the resulting scatter plots of the cleaned data.
+
+
 
 ### Data augmentation:
 Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
