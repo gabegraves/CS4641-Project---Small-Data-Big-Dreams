@@ -18,8 +18,41 @@ We are going to explore different ways to deal with small datasets.
 
 ### Generative models for data synthesis:
 Synthetic data as a supplement to real data is another way to deal with small datasets. Specifically, we will test the GAN and Diffusion models on their efficacy in generating synthetic data.
-- GAN: We’ll use GAN on existing datasets to generate synthetic data.
-- Diffusion model: We’ll use textual inversion on pre-trained diffusion models to engineer a prompt for our dataset, and use this prompt as a condition to generate synthetic data from the pre-trained diffusion model. We will use TabDPPM as a our diffusion model for tabular regression [2, 5].
+
+GAN (Generative Adversarial Networks): GANs consist of two parts: a generator network, which produces synthetic data, and a discriminator network, which tries to distinguish between the real and synthetic data. The two networks are trained together, with the generator network trying to fool the discriminator network, and the discriminator network trying to accurately classify the data as real or synthetic. This adversarial process leads to the generator network producing increasingly realistic data. The reason we believe GANs would work well for data augmentation is due to their ability to learn and mimic the complex distributions of real-world data.
+The training process of a GAN can be represented by the following min-max equation:
+
+min_G max_D V(D, G) = E_{x~p_data(x)}[log D(x)] + E_{z~p_z(z)}[log(1 - D(G(z)))]
+
+In this equation:
+
+- E denotes the expectation.
+
+- x is a sample from the real data.
+
+- z is a sample from the noise distribution.
+
+- D(x) is the discriminator's estimate of the probability that real data instance x is real.
+
+- G(z) is the generator's output when given noise z.
+
+- D(G(z)) is the discriminator's estimate of the probability that a fake instance is real.
+
+Diffusion models: Diffusion models are a class of generative models that generate data by simulating a diffusion process, which gradually adds noise to the data until it reaches a predefined noise level. The generated data is then obtained by reversing this process, gradually removing the noise. For tabular data, we will use a specific type of diffusion model called TabDPPM (Tabular Data Pre-training via Predictive Modeling).
+
+The reason we believe diffusion models would work well for tabular regression tasks is due to their ability to model the data distribution in a more granular and step-wise manner, which can capture the intricate structures in tabular data. The diffusion process can be represented by the following stochastic differential equation:
+
+dx = sqrt(2*Dt) * dW - Dt * grad_x(log p(x)) dt
+
+In this equation:
+
+- x is the data.
+- D is the diffusion coefficient.
+- t is the time.
+- W is a Wiener process.
+- p(x) is the data distribution.
+- 
+We will use textual inversion on pre-trained diffusion models to engineer a prompt for our dataset, and use this prompt as a condition to generate synthetic data from the pre-trained diffusion model. The textual inversion process involves finding the most likely latent variables that would have produced a given output, which can be used to guide the generation process.
 ### Transfer learning: 
 We’ll further explore how we can fine-tune existing large models for small dataset classification tasks.
 - Changing all parameters of the model is probably unrealistic given our current devices.
