@@ -21,7 +21,7 @@ Data augmentation methods, such as random croppings, rotations, and adding Gauss
 <br>
 Rotations (90, 180, and 270 degrees respectively): <br>
 - This helps the model recognize all sorts of rotated images <br>
-- Solarized dark             |  Solarized Ocean
+Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
 <img src='Rotate 90.png' width='300'>  |  <img src='Rotate 180.png' width='300'>
 <img src='Rotate 90.png' width='300'>
