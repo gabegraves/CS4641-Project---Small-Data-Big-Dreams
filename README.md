@@ -14,8 +14,8 @@ The motivation of this project is to experiment with various dataset sizes and m
 We are going to explore different ways to deal with small datasets.
 
 ### Data augmentation:
-Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.
-<img src='Control.png' width='200'>
+Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.\n
+<img src='Control.png' width='300'>
 
 ### Generative models for data synthesis:
 Synthetic data as a supplement to real data is another way to deal with small datasets. Specifically, we will test the GAN and Diffusion models on their efficacy in generating synthetic data.
