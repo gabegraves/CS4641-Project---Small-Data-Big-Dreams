@@ -98,11 +98,11 @@ Similarly to the FM measure, we expect the AUC-ROC to be higher for the syntheti
 
 | Name            | Contribution                              |
 |-----------------|-------------------------------------------|
-| Gabe Graves     | Introduction and Background, Novel Methods |
-| Lucy Xing       | Problem Statement                          |
-| Hyuk Huang      | Results and Discussion                     |
-| Hannah Lee      | Methods                                   |
-| Rohan Nandakumar| Timeline, Github Page                      |
+| Gabe Graves     | XGBoost, GAN |
+| Lucy Xing       | Data Cleaning                          |
+| Hyuk Huang      | Data Augmentation                     |
+| Hannah Lee      | CNN, F1 score                                   |
+| Rohan Nandakumar| Tabular Preprocessing, Diffusion                      |
 
 
 
