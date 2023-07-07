@@ -51,7 +51,6 @@ In this equation:
 - t is the time.
 - W is a Wiener process.
 - p(x) is the data distribution.
-- 
 We will use textual inversion on pre-trained diffusion models to engineer a prompt for our dataset, and use this prompt as a condition to generate synthetic data from the pre-trained diffusion model. The textual inversion process involves finding the most likely latent variables that would have produced a given output, which can be used to guide the generation process.
 ### Transfer learning: 
 We’ll further explore how we can fine-tune existing large models for small dataset classification tasks.
@@ -107,13 +106,12 @@ Using the uber dataset, there are many different comparisons that can be leverag
 through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
 used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
-begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data.
+begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data. Note: as the data was collected from Uber, it was already cleaned. However, feature 
 
 <img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
 
 #### Image Data
-For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of
-5,000.
+For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of 5,000.
 
 ### Data augmentation:
 Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
@@ -158,7 +156,7 @@ The benchmark is the complete dataset of CIFAR10 and the model shows good perfor
 
 | Name            | Contribution                              |
 |-----------------|-------------------------------------------|
-| Gabe Graves     | XGBoost, GAN |
+| Gabe Graves     | XGBoost, GAN, Tabular Feature Seleciton, Updated Intro, Background, Methods |
 | Lucy Xing       | Data Cleaning                          |
 | Hyuk Lee      | Data Augmentation                     |
 | Hannah Huang      | CNN and training                               |
