@@ -18,6 +18,10 @@ Data augmentation methods, such as random croppings, rotations, and adding Gauss
 <img src='Control.png' width='300'>
 |:--:| 
 *Control Image*
+<figure>
+  <img src="Control.png" width='300' alt="my alt text"/>
+  <figcaption>This is my caption text.</figcaption>
+</figure>
 <img src='Random Crop.png' width='300'>
 <img src='GrayScale.png' width='300'><br>
 <img src='Rotate 90.png' width='300'>
