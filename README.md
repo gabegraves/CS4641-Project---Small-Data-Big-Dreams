@@ -52,6 +52,12 @@ Perspective Changes (0.3 and 0.6 respectively): <br>
 - This is used to train the model for stretched and tilted images <br>
 <img src='Weak Perspective.png' width='300'> <img src='Stronger Perspective.png' width='300'>
 
+### model
+We use a Convolutional neural network model to perform image classification. For the model, we use 3 CNN layers with ReLU as an activation function and max-pooling after each layer. After the CNN layers, we use 2 fully connected layers to get the final classification result. For the loss function, we use cross-entropy loss.
+
+The benchmark is the complete dataset of CIFAR10 and the model shows good performance on it:![image](https://github.gatech.edu/storage/user/68901/files/464cfc0b-c7f5-4d49-9827-6f5fdbf882ae)
+
+
 ### Generative models for data synthesis:
 Synthetic data as a supplement to real data is another way to deal with small datasets. Specifically, we will test the GAN and Diffusion models on their efficacy in generating synthetic data.
 - GAN: We’ll use GAN on existing datasets to generate synthetic data.
