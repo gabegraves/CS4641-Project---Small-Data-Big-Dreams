@@ -1,16 +1,19 @@
 # Small Data Big Dreams
 ## Intro/Background
+Data augmentation and transfer learning have emerged as pivotal techniques in leveraging machine learning, particularly when dealing with small datasets. These techniques effectively mitigate overfitting and enhance model generalizability, working through the artificial expansion of the dataset and the strategic employment of pre-existing knowledge, respectively. This exploration aims to achieve a comprehensive application of these methodologies, along with other key strategies, to address the challenges posed by image classification and tabular regression problems on small datasets.
 
-Data augmentation and transfer learning are vital for leveraging machine learning on small datasets. These techniques mitigate overfitting and improve model generalizability by artificially expanding the dataset and leveraging pre-existing knowledge, respectively. 
+The implementation starts with feature selection, which involves identifying and focusing on the most relevant attributes in the dataset that significantly contribute to the predictive performance of the model. For tabular regression tasks, we have chosen to use XGBoost, a powerful gradient boosting framework known for its efficiency and high performance. XGBoost works effectively with tabular data and provides valuable feature importance scores, assisting in our feature selection process.
 
-In this exploration, we'll delve into the application of these and similar methodologies for image classification and tabular regression problems on small datasets, presenting practical insights and challenges encountered in implementing these techniques.
+Subsequently, we turn to data augmentation, an approach that plays a crucial role in counteracting the lack of data. By creating a diverse range of transformations of the original data, we are effectively expanding the dataset and providing the model with more varied scenarios to learn from. This assists in reducing overfitting and in enhancing the model's ability to capture desired properties and invariances.
+
+In parallel, we incorporate data synthesis techniques for generating additional synthetic data that mirrors the properties of the real-world data. We utilize generative adversarial networks (GANs) and diffusion models, renowned for their capacity to create high-quality synthetic data. GANs, which consist of a generator and discriminator network, can learn and mimic the data distribution of the training set. Similarly, diffusion models, specifically the TabDPPM diffusion model, can model the data distribution and generate new synthetic data, thereby providing an additional source of training data.
+Finally, for the model, we employ complex models such as a convolutional neural network for image classification tasks, which can effectively handle and extract intricate patterns from image data. By leveraging transfer learning, we aim to utilize these models' pre-trained knowledge and fine-tune them to our specific tasks, thus making efficient use of the limited data.
+
 
 ## Problem Statement
-
-The motivation of this project is to experiment with various dataset sizes and methodologies for data augmentation and transfer learning processes. Overfitting, limited dataset sizes, and overall accuracy in machine learning are still areas rife with potential for new development today, and the ability to artificially expand training sets from existing data offers an efficient breakthrough in the field. However, data augmentation today is still limited by the effectiveness of current approaches.
+The motivation of this project is to experiment with various dataset sizes and methodologies for data augmentation and transfer learning processes. Overfitting, limited dataset sizes, and overall accuracy in machine learning are still areas rife with potential for new development today, and the ability to artificially expand training sets from existing data offers an efficient breakthrough in the field. Data augmentation holds the promise of a powerful tool, artificially expanding training sets from existing data and thus mitigating overfitting and enhancing model generalizability. However, data augmentation today is still limited by the effectiveness of current approaches. Our goal is not simply to employ the latest models or architectures at the problem at hand, but rather to employ data augmentation, synthetic data generation, and widely used ML models for complex data and to determine the best ensemble approach to contribute meaningful insights and strategies for dealing with the challenge of small datasets. 
 
 ## Methods
-
 We are going to explore different ways to deal with small datasets.
 ### Data Cleaning
 #### Tabular Data
