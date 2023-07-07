@@ -22,12 +22,12 @@ Control Image:
 
 Random Crop:
 - Zooms into and crops a random portion of the image <br>
-<img src='Random Crop.png' width='300'>
+   <img src='Random Crop.png' width='300'>
 
 
 Grayscale:
 - Changes RGB values to shades of gray <br>
-<img src='GrayScale.png' width='300'>
+   <img src='GrayScale.png' width='300'>
 
 
 Rotations (90, 180, and 270 degrees respectively): <br>
