@@ -14,33 +14,31 @@ The motivation of this project is to experiment with various dataset sizes and m
 We are going to explore different ways to deal with small datasets.
 
 ### Data augmentation:
-Data augmentation methods, such as random croppings, rotations, and adding Gaussian noise, are ways to deal with small datasets. We will benchmark each data augmentation method as well as combinations of them to find the optimal combo.<br><br>
+Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
 Control Image:
 - No augmentation was performed on these images<br>
-<img src='Control.png' width='300'>
+   <img src='Control.png' width='300'>
 
 
 Random Crop:
 - Zooms into and crops a random portion of the image <br>
-<img src='Random Crop.png' width='300'>
+   <img src='Random Crop.png' width='300'>
 
 
 Grayscale:
 - Changes RGB values to shades of gray <br>
-<img src='GrayScale.png' width='300'>
+   <img src='GrayScale.png' width='300'>
 
 
 Rotations (90, 180, and 270 degrees respectively): <br>
 - This helps the model recognize all sorts of rotated images <br>
-<img src='Rotate 90.png' width='300'>
-<img src='Rotate 180.png' width='300'>
-<img src='Rotate 270.png' width='300'>
+<img src='Rotate 90.png' width='300'> <img src='Rotate 180.png' width='300'> <img src='Rotate 270.png' width='300'>
 
 
 Perspective Changes (0.3 and 0.6 respectively): <br>
 - This is used to train the model for stretched and tilted images <br>
-<img src='Weak Perspective.png' width='300'>
-<img src='Stronger Perspective.png' width='300'>
+<img src='Weak Perspective.png' width='300'> <img src='Stronger Perspective.png' width='300'>
+
 ### Generative models for data synthesis:
 Synthetic data as a supplement to real data is another way to deal with small datasets. Specifically, we will test the GAN and Diffusion models on their efficacy in generating synthetic data.
 - GAN: We’ll use GAN on existing datasets to generate synthetic data.
