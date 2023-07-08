@@ -72,8 +72,7 @@ In this equation:
 
 XGBoost (Extreme Gradient Boosting): The objective function that
 XGBoost optimizes is represented by the following equation:
-$\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
-$
+$\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)$
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction and the target.
