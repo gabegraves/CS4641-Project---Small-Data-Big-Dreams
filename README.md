@@ -65,7 +65,7 @@ CNN (Convolutional Neural Networks): The convolution operation in a
 
 $\mathrm{CNN}$ is represented by the following equation:
 
-$(I * K)[m, n]=\sum_{i=1}^h \sum_{j=1}^w I[i, j] \cdot K[m-i, n-j]$
+$(I * K)[m, n]= \sum_{i=1}^ h \sum_{j=1}^ w I[i, j] \cdot K[m-i, n-j]$
 
 In this equation:
 - $I$ is the input image.
