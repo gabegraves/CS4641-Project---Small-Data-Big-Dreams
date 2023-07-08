@@ -58,6 +58,44 @@ We’ll further explore how we can fine-tune existing large models for small dat
 - Use LoRA to fine-tune the classification model.
 - Add layers on top of the pre-trained model and freeze other layers.
 - Use of Big Transfer model for image classification [1].
+
+### Models:
+
+CNN (Convolutional Neural Networks): The convolution operation in a
+$\mathrm{CNN}$ is represented by the following equation:
+$$
+(I * K)[m, n]=\sum_{i=1}^h \sum_{j=1}^w I[i, j] \cdot K[m-i, n-j]
+$$
+In this equation:
+- $I$ is the input image.
+- $K$ is the kernel or filter.
+- $m, n$ are the spatial coordinates in the input image.
+- $h, w$ are the dimensions of the kernel.
+XGBoost (Extreme Gradient Boosting): The objective function that
+XGBoost optimizes is represented by the following equation:
+$$
+\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
+$$
+In this equation:
+- $\operatorname{obj}(\theta)$ is the objective function to be minimized.
+- $L$ is a differentiable convex loss function that measures the difference between the prediction and the target.
+- $\Omega(f)$ penalizes the complexity of the model. It is defined as:
+$\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^2$, where $\gamma T$ is the complexity control on the number of leaves, and $\frac{1}{2} \lambda\|w\|^2$ is the $L 2$ regularization term on the leaf weights.
+- $y$ is the target value.
+- $f$ is the predicted value.
+
+LightGBM (Light Gradient Boosting Machine): LightGBM is a gradient boosting framework that uses tree-based learning algorithms. It is designed to be efficient and contains several advanced features, such as support for categorical features and an option for histogrambased algorithm for bucketing continuous features.
+The objective function that LightGBM optimizes is represented by the following equation:
+$$
+\operatorname{obj}(\theta)=\sum_{i=1}^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
+$$
+In this equation:
+- $\operatorname{obj}(\theta)$ is the objective function to be minimized.
+- $L$ is a differentiable convex loss function that measures the difference between the prediction $\left(f\left(x_i\right)\right)$ and the target $\left(y_i\right)$.
+- $\Omega(f)$ penalizes the complexity of the model. It is defined as: $\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^2$, where $\gamma T$ is the complexity control on the number of leaves, and $\frac{1}{2} \lambda\|w\|^2$ is the L2 regularization term on the leaf weights.
+- $y_i$ is the target value for the $i^{\text {th }}$ instance.
+- $f\left(x_i\right)$ is the predicted value for the $i^{\text {th }}$ instance.
+
 ## Metrics:
 
 We'll use several metrics to gauge the success of our data augmentation techniques. The Fowlkes-Mallows index gauges the similarity between synthetic and original data, with a higher score signaling better augmentation. The AUC-ROC, an evaluation measure for classification problems, plots the True Positive Rate against the False Positive Rate. We anticipate improved scores with synthetic data. For multi-class models, multiple AUC-ROC curves will be generated. In tabular regression tasks, we'll use RMSE and MAE, metrics that quantify prediction deviations from actual values, thus offering a holistic view of our prediction accuracy. We aim for these scores to also improve with the use of synthetic data [3, 4].
@@ -162,7 +200,7 @@ We use a Convolutional neural network model to perform image classification. For
 The benchmark is the complete dataset of CIFAR10 and the model shows good performance on it:![image](https://github.gatech.edu/storage/user/68901/files/464cfc0b-c7f5-4d49-9827-6f5fdbf882ae)
 
 Tabular:
-We used randomly generated tabular regression data from sklearn.datasets make_regression due to still working on feature selection and data cleaning for current tabular data as well as working on switching to a large, more standardized dataset that will lead to better comparisons. Consequently, the large RMSE and MAE are likely due to the random nature of the tabular dataset from sklearn but the important factors to note is the improvement in training loss and low validation with a decreasing overall slope showing little to no overfitting.
+We used randomly generated tabular regression data from sklearn.datasets make_regression due to still working on feature selection and data cleaning for current tabular data as well as working on switching to a large, more standardized dataset that will lead to better comparisons. Consequently, the large RMSE and MAE are likely due to the random nature of the tabular dataset from sklearn but the important factors to note is the improvement in training loss and low validation with a decreasing overall slope showing little to no overfitting. XGBoost and LightGBM were the two models chosen due to their recent widespread use for tabular data, as shown in the graphs below, LightGBM is the current preferred model.
 
 ![RMSE](/RMSE.PNG)
 ![MAE](/MAE.PNG)
