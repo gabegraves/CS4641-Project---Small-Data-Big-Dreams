@@ -83,9 +83,7 @@ $\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^2$, where $\gamma T$ is the complex
 
 LightGBM (Light Gradient Boosting Machine): LightGBM is a gradient boosting framework that uses tree-based learning algorithms. It is designed to be efficient and contains several advanced features, such as support for categorical features and an option for histogrambased algorithm for bucketing continuous features.
 The objective function that LightGBM optimizes is represented by the following equation:
-$
-\operatorname{obj}(\theta)=\sum_{i=1}^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
-$
+$\operatorname{obj}(\theta)=\sum_{i=1}^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)$
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction $\left(f\left(x_i\right)\right)$ and the target $\left(y_i\right)$.
