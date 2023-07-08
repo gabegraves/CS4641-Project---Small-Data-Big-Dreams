@@ -62,11 +62,8 @@ We’ll further explore how we can fine-tune existing large models for small dat
 ### Models:
 
 CNN (Convolutional Neural Networks): The convolution operation in a
-
 $\mathrm{CNN}$ is represented by the following equation:
-
-$(I * K)[m, n]= \sum_{i=1}^ h \sum_{j=1}^ w I[i, j] \cdot K[m-i, n-j]$
-
+$(I * K)[m, n]=\sum_{i=1}^h \sum_{j=1}^w I[i, j] \cdot K[m-i, n-j]$
 In this equation:
 - $I$ is the input image.
 - $K$ is the kernel or filter.
@@ -75,9 +72,7 @@ In this equation:
 
 XGBoost (Extreme Gradient Boosting): The objective function that
 XGBoost optimizes is represented by the following equation:
-
 $\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)$
-
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction and the target.
@@ -88,9 +83,7 @@ $\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^2$, where $\gamma T$ is the complex
 
 LightGBM (Light Gradient Boosting Machine): LightGBM is a gradient boosting framework that uses tree-based learning algorithms. It is designed to be efficient and contains several advanced features, such as support for categorical features and an option for histogrambased algorithm for bucketing continuous features.
 The objective function that LightGBM optimizes is represented by the following equation:
-
 $\operatorname{obj}(\theta)=\sum_{i=1}^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)$
-
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction $\left(f\left(x_i\right)\right)$ and the target $\left(y_i\right)$.
@@ -166,7 +159,9 @@ PCA:
 As can be seen from the feature selection, mean travel time is the most important feature as one would assume. As noted before, this data is not as large as we originally hoped and the relevant features for regression are not vast and so will be updated soon.
 
 #### Image Data
-For our image-based dataset, we used the well-known CIFAR-10 dataset accessible as part of the PyTorch library. We pared down the 60,000 images to a smaller subset of 5,000.
+The CIFAR-10 dataset of 60,000 labeled images belonging to 10 different classes is a popular dataset that comes with the PyTorch library. We randomly generated a smaller subset of this dataset, consisting of 1,000 images, in order to account for overfitting mitigation, balanced representation, and overall computational efficiency. 
+
+Random sleection helps to ensure that the subset represents the overall distribution of classes in the original dataset. Additionally, cleaning the dataset to a much smaller subset also helps mitigate overfitting by reducing the complexity and redundancy of training data, allowing for further generalizations to larger datasets in the future.  
 
 ### Data augmentation:
 Data augmentation methods, such as random croppings, rotations, and changing perspectives, are ways to deal with small datasets. We utilized these methods for data augmentation and will work to find which combinations of them are the optimal combo.<br><br>
