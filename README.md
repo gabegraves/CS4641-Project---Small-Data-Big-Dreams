@@ -63,9 +63,7 @@ We’ll further explore how we can fine-tune existing large models for small dat
 
 CNN (Convolutional Neural Networks): The convolution operation in a
 $\mathrm{CNN}$ is represented by the following equation:
-$$
-(I * K)[m, n]=\sum_{i=1}^h \sum_{j=1}^w I[i, j] \cdot K[m-i, n-j]
-$$
+$(I * K)[m, n]=\sum_{i=1}^h \sum_{j=1}^w I[i, j] \cdot K[m-i, n-j]$
 In this equation:
 - $I$ is the input image.
 - $K$ is the kernel or filter.
@@ -73,9 +71,8 @@ In this equation:
 - $h, w$ are the dimensions of the kernel.
 XGBoost (Extreme Gradient Boosting): The objective function that
 XGBoost optimizes is represented by the following equation:
-$$
-\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
-$$
+$\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
+$
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction and the target.
@@ -86,9 +83,9 @@ $\Omega(f)=\gamma T+\frac{1}{2} \lambda\|w\|^2$, where $\gamma T$ is the complex
 
 LightGBM (Light Gradient Boosting Machine): LightGBM is a gradient boosting framework that uses tree-based learning algorithms. It is designed to be efficient and contains several advanced features, such as support for categorical features and an option for histogrambased algorithm for bucketing continuous features.
 The objective function that LightGBM optimizes is represented by the following equation:
-$$
+$
 \operatorname{obj}(\theta)=\sum_{i=1}^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
-$$
+$
 In this equation:
 - $\operatorname{obj}(\theta)$ is the objective function to be minimized.
 - $L$ is a differentiable convex loss function that measures the difference between the prediction $\left(f\left(x_i\right)\right)$ and the target $\left(y_i\right)$.
