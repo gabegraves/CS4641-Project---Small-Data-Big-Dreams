@@ -69,6 +69,7 @@ In this equation:
 - $K$ is the kernel or filter.
 - $m, n$ are the spatial coordinates in the input image.
 - $h, w$ are the dimensions of the kernel.
+
 XGBoost (Extreme Gradient Boosting): The objective function that
 XGBoost optimizes is represented by the following equation:
 $\operatorname{obj}(\theta)=\sum_i^n L\left(y_i, f\left(x_i\right)\right)+\Omega(f)
