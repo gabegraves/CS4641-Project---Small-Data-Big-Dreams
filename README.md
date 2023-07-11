@@ -135,26 +135,27 @@ Both RMSE and MAE are measures of prediction error, with RMSE giving a relativel
 
 ### Data Cleaning
 #### Tabular Data
-Using the uber dataset, there are many different comparisons that can be leveraged for training a deep learning model. Cleaning the uber dataset involved parsing
+Inititally, we used the uber dataset. Cleaning the uber dataset involved parsing
 through all the data available and removing illfitting data(null data, outliers, irrelevant data).Additionally, only one days worth of data from the uber dataset was
 used, this will serve as our training data and the results from the model will be compared to the actual values recorded in the uber dataset. The data was plotted on
 scatter plots and a heat map to determine what sort of regression should be used to fit to the data. In the future we will apply the best fit regression model and
-begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data. Note: as the data was collected from Uber, it was already cleaned. However, PCA and Lasso were also applied along with a heatmap. It should also be noted that the dataset may soon be changed for a larger dataset for better testing purposes.
+begin to train our diffusion model using TabDDPM.The metrics are availible lower in the document. See below for the resulting scatter plots of the cleaned data. Our intitial work on cleaning the uber dataset is shown below, but after more consideration we changed our comparison dataset to the critical superconductor dataset as provided here: https://archive.ics.uci.edu/dataset/464/superconductivty+data. This is due to the dataset being featured as a good dataset for benchmarking due to its 82 features and 21263 rows of data. 
 
+Original Uber Data Visualization:
 <img src='heatmapuber.PNG' width='200'> <img src='counthour.PNG' width='200'> <img src='countday.PNG' width='200'>
 
-Correlation Heat Map:
+Updated Correlation Heat Map (Superconductor):
 
-![image](https://github.gatech.edu/storage/user/35648/files/bcb34e0a-3913-4ae9-a744-7f14df33f7c6)
+![image](https://github.gatech.edu/storage/user/35648/files/28e8ee22-b535-4b1f-8f1c-38bbf1d7b3cb)
 
-LASSO:
-![image](https://github.gatech.edu/storage/user/35648/files/101fa1bf-532b-4e08-ab12-63a30716bf82)
+LASSO (Superconductor):
+![image](https://github.gatech.edu/storage/user/35648/files/b2eb82bd-fe27-40c5-b4a7-1b039fb1ffe5)
 
-PCA:
+PCA (Superconductor):
 
-![image](https://github.gatech.edu/storage/user/35648/files/0f89b75b-8caa-4907-b430-85f5cf7774d0)
+![image](https://github.gatech.edu/storage/user/35648/files/44f54fd8-572e-474b-97a3-4d52d628a106)
 
-![image](https://github.gatech.edu/storage/user/35648/files/76f74c3f-2f25-42ad-91cc-eb791131291a)
+![image](https://github.gatech.edu/storage/user/35648/files/afbb0c40-bb96-4f2e-990a-dd7b22b8e91c)
 
 As can be seen from the feature selection, mean travel time is the most important feature as one would assume. As noted before, this data is not as large as we originally hoped and the relevant features for regression are not vast and so will be updated soon.
 
@@ -197,11 +198,11 @@ We use a Convolutional neural network model to perform image classification. For
 The benchmark is the complete dataset of CIFAR10 and the model shows good performance on it:![image](https://github.gatech.edu/storage/user/68901/files/464cfc0b-c7f5-4d49-9827-6f5fdbf882ae)
 
 Tabular:
-We used randomly generated tabular regression data from sklearn.datasets make_regression due to still working on feature selection and data cleaning for current tabular data as well as working on switching to a large, more standardized dataset that will lead to better comparisons. Consequently, the large RMSE and MAE are likely due to the random nature of the tabular dataset from sklearn but the important factors to note is the improvement in training loss and low validation with a decreasing overall slope showing little to no overfitting. XGBoost and LightGBM were the two models chosen due to their recent widespread use for tabular data, as shown in the graphs below, LightGBM is the current preferred model.
+We used LightGBM and XGBoost due to their tree-based architecture that has shown the most promise for tabular-based data [6]. Based on the results, it can be seen XGboost outperforms LightGBM perhaps due to its split finding algorithm over lightgbm's historgram for data binning, or regularization in the objective function. It should also be noted that lightgbm typically performs better on larger datasets, and since with ~20,000 rows of data one could consider our tabular data as medium sized, XGBoost could be considered as more suited for our current dataset [7].
 
-![RMSE](/RMSE.PNG)
-![MAE](/MAE.PNG)
-![ValidationvSample](/ValidationvSample.PNG)
+![image](https://github.gatech.edu/storage/user/35648/files/623c2366-b0f7-455c-8b19-52d53895a289)
+![image](https://github.gatech.edu/storage/user/35648/files/5277e3fa-6509-4b3a-8a26-eb3b71420e17)
+![image](https://github.gatech.edu/storage/user/35648/files/67202b95-f831-45e4-9f0a-ea71c127acee)
 
   
 ## Timeline:
@@ -222,7 +223,10 @@ We used randomly generated tabular regression data from sklearn.datasets make_re
 
 ## References:
 [1] A. Kolesnikov et al., “Big transfer (BIT): General Visual Representation Learning,” Computer Vision – ECCV 2020, pp. 491–507, 2020. doi:10.1007/978-3-030-58558-7_29  
-[2] A. Kotelnikov, D. Baranchuk, I. Rubachev, and A. Babenko, TabDDPM: Modelling Tabular Data with Diffusion Models. doi: https://doi.org/10.48550/arXiv.2209.15421 Focus to learn more  
+[2] A. Kotelnikov, D. Baranchuk, I. Rubachev, and A. Babenko, "TabDDPM: Modelling Tabular Data with Diffusion Models". doi: https://doi.org/10.48550/arXiv.2209.15421 Focus to learn more  
 [3] J. N. Mandrekar, “Receiver operating characteristic curve in diagnostic test assessment,” Journal of Thoracic Oncology, vol. 5, no. 9, pp. 1315–1316, 2010. doi:10.1097/jto.0b013e3181ec173d  
 [4] S. Narkhede, “Understanding AUC - roc curve,” Medium, https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5 (accessed Jun. 16, 2023).   
 [5] “Textual inversion,” Textual Inversion, https://huggingface.co/docs/diffusers/training/text_inversion#:~:text=Textual%20Inversion%20is%20a%20technique,model%20variants%20like%20Stable%20Diffusion (accessed Jun. 16, 2023).
+[6] L. Grinsztajn, E. Oyallon, G. Varoquaux, "Why do tree-based models still outperform deep learning on tabular data?". doi: 
+https://doi.org/10.48550/arXiv.2207.08815
+[7] https://neptune.ai/blog/xgboost-vs-lightgbm
